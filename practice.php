@@ -1,58 +1,68 @@
 <?php
-// kplc staff definition
-//$leo_name="Leo";
-//$leo_taff_id=1234;
-//echo $leo_name." ".$leo_taff_id;
-$leo=["name"=>"LEO","Staff_id"=>12345];
-$Masharia=["name"=>"Macharia","Staff_id"=>12346];
+//KPLC Staff definition
+//$leo_name = "Leo";
+//$leo_staff_id = 1234;
+$leo = ['name'=>'Leo', 'staff_id' => 1234];
+$macharia = ['name'=>'Macharia', 'staff_id' => 12345];
+$kevin = ['name'=>'Kevin', 'staff_id' => 231];
 //print_r($leo);
-//print_r($Masharia);
-$k=$leo;
-$b=$Masharia;
-$staff= array($k,$b);
-print_r($staff);
-echo "</br>";
-echo "function to echo sstaff"."</br>";
-
-// function to echo sstaff
-/**
- *
- */
-showStaff();
-function showStaff(){
-    $leo=["name"=>"LEO","Staff_id"=>12345];
-    $Masharia=["name"=>"Macharia","Staff_id"=>12346];
-    $Masharia=["name"=>"Machariad","Staff_id"=>12342];
-//print_r($leo);
-//print_r($Masharia);
-    $k=$leo;
-    $b=$Masharia;
-    $staff= array($k,$b);
-    $No=count($staff);
+//print_r($macharia);
+$staff = array($leo,$macharia,$kevin);
+//showAllStaff($staff);
+$no_of_staff = count($staff);
+foreach ($staff as $staff) {
+    echo $staff['name']."<br>";
+    # code...
+}
+// for ($i=0; $i < $no_of_staff ; $i++) {
+//   echo $staff[$i]['name']."<br>";
+//   # code...
+// }
+exit;
+$vacancies = 5 - $no_of_staff;
+//echo $no_of_staff;
+//conditional statement
+if ($no_of_staff>5) {
+    echo "No vacancy";
+    # code...
+}else{
+    echo "Vacancies available: ".$vacancies;
+}
+//echo $leo_name." ".$leo_staff_id;
+//function to echo staff
+function showAllStaff($staff){
+    //dosomething
     print_r($staff);
-    echo $No;
-    if ($No<2){
-
-        echo "No vacancy";
-    }else{
-
-        echo "Vacancy";
-    }
 }
-$sms=" Ramogi Hi, please send me my favorite song and play for me, zahara";
-$arr= explode(' ',trim($sms));
-//print_r($arr);
-//$prefix=substr(trim($sms),0,4);
-
-switch($arr){
-    case "Ramogi":
-        echo "Message for RAMAGI";
-    case "Citezen":
-        echo "Message for CITEZEN";
-    default:
-        echo "confuse person";
+//process an incoming text
+/*
+$sms = "Ramogi this is Kevin, play for me fundamendozzz";
+$arr = explode(' ',trim($sms));
+$prefix = $arr[0];
+//$prefix = substr(trim($sms),0,4);
+/*$findme   = 'KISS';
+$pos = strpos($sms, $findme);
+//print_r ($prefix);
+if ($pos) {
+  echo "Send this message to Shaffie Weru";
+  # code...
+}else{
+  echo "send this message to King'angi";
+}
+//switch
+switch (strtolower($prefix)) {
+    case 'inooro':
+      echo "Message for Inooro FM";
         break;
-
+    case 'citizen':
+      echo "Message for Citizen FM";
+        break;
+    case 'ramogi':
+      echo "Message for Ramogi FM";
+        break;
+    default:
+      echo "Confused Person";
+      break;
 }
-
+*/
 ?>
