@@ -1,4 +1,5 @@
 <?php
+/*
 //KPLC Staff definition
 //$leo_name = "Leo";
 //$leo_staff_id = 1234;
@@ -35,10 +36,13 @@ function showAllStaff($staff){
     print_r($staff);
 }
 //process an incoming text
-/*
-$sms = "Ramogi this is Kevin, play for me fundamendozzz";
+*/
+$sms = "citizen this is Kevin, play for me fundamendozzz";
 $arr = explode(' ',trim($sms));
 $prefix = $arr[0];
+print_r ($arr);
+echo "</br>";
+/*
 //$prefix = substr(trim($sms),0,4);
 /*$findme   = 'KISS';
 $pos = strpos($sms, $findme);
@@ -50,6 +54,8 @@ if ($pos) {
   echo "send this message to King'angi";
 }
 //switch
+*/
+
 switch (strtolower($prefix)) {
     case 'inooro':
       echo "Message for Inooro FM";
@@ -64,5 +70,5 @@ switch (strtolower($prefix)) {
       echo "Confused Person";
       break;
 }
-*/
+
 ?>
